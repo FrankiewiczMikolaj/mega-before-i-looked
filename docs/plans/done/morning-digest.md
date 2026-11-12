@@ -1,6 +1,6 @@
 ---
 plan: morning-digest
-status: ready
+status: done
 owner: rook
 opened: 2026-10-29
 ---
@@ -77,3 +77,21 @@ page again with `LANE_MARKER` unset (the banner reads "no marker set") and uploa
 link. Move this plan to `docs/plans/done/` with its issue list.
 
 Done when: the preview link no longer shows the lane marker.
+
+## Issue list and completion
+
+- [#1 — Define digest types and reader contract](https://github.com/FrankiewiczMikolaj/mega-before-i-looked/issues/1)
+- [#2 — Implement and test the run-log reader](https://github.com/FrankiewiczMikolaj/mega-before-i-looked/issues/2)
+- [#3 — Build the digest HTML page](https://github.com/FrankiewiczMikolaj/mega-before-i-looked/issues/3)
+- [#4 — Build the digest JSON endpoint](https://github.com/FrankiewiczMikolaj/mega-before-i-looked/issues/4)
+- [#5 — Link nights from the status board](https://github.com/FrankiewiczMikolaj/mega-before-i-looked/issues/5)
+- [#6 — Test digest routes](https://github.com/FrankiewiczMikolaj/mega-before-i-looked/issues/6)
+- [#7 — Publish and submit the review preview](https://github.com/FrankiewiczMikolaj/mega-before-i-looked/issues/7)
+- [#8 — Remove the public marker and archive the plan](https://github.com/FrankiewiczMikolaj/mega-before-i-looked/issues/8)
+
+The human approved counting each job once by its final status for section 2c.
+The reviewer confirmed seeing the preview. With separate human approval, the same
+production URL was replaced and verified to show "no marker set":
+https://mega-l07-before-i-looked.pages.dev/
+
+This plan is complete; course acceptance of the final claim is separate.
