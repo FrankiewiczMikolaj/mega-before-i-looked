@@ -7,6 +7,7 @@ import { StatusBoard } from './views/status.js';
 import type { ReadNight } from './digest/types.js';
 import { readNight as readNightFromFile } from './digest/read.js';
 import { DigestPage } from './views/digest.js';
+import { createDigestJsonRoutes } from './digest/json.js';
 
 export function createApp(config: RigConfig = loadConfig(), readNight: ReadNight = readNightFromFile) {
   const app = new Hono();
@@ -31,6 +32,8 @@ export function createApp(config: RigConfig = loadConfig(), readNight: ReadNight
       digest === null ? 404 : 200,
     );
   });
+
+  app.route('/', createDigestJsonRoutes(config.runsDir, readNight));
 
   return app;
 }
