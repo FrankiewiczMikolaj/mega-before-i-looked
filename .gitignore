@@ -3,3 +3,8 @@ var/
 .env
 *.png
 .claude/skills
+
+# Repo-local package tooling and caches
+/.tooling/
+/.cache/
+/.pnpm-store/
