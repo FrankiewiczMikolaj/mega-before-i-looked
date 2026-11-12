@@ -8,3 +8,4 @@ var/
 /.tooling/
 /.cache/
 /.pnpm-store/
+/dist/
