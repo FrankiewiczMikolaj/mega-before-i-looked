@@ -1,6 +1,10 @@
 import type { Status } from '../status.js';
+import type { NightDigest } from '../digest/types.js';
 
-export function StatusBoard({ status }: { status: Status }) {
+export function StatusBoard({ status, digests }: {
+  status: Status;
+  digests: Record<string, NightDigest | null>;
+}) {
   return (
     <>
       <h1>status</h1>
@@ -19,9 +23,19 @@ export function StatusBoard({ status }: { status: Status }) {
         <p class="mute">nothing in runs/</p>
       ) : (
         <ul>
-          {status.nights.map((n) => (
-            <li>{n}</li>
-          ))}
+          {status.nights.map((n) => {
+            const digest = digests[n];
+            const counts = { ok: 0, retry: 0, fail: 0 };
+            for (const row of digest?.rows ?? []) counts[row.lastStatus]++;
+            return (
+              <li>
+                <a href={`/digest/${n}`}>{n}</a>
+                {digest === null || digest === undefined
+                  ? ' · counts unavailable'
+                  : ` · ok ${counts.ok} / retry ${counts.retry} / fail ${counts.fail}`}
+              </li>
+            );
+          })}
         </ul>
       )}
     </>
